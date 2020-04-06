@@ -24,6 +24,9 @@
     <ClInclude Include="RandomGen.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="RadixSort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">

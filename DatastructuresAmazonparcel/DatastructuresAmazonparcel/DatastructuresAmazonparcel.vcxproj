@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CreateParcel.h" />
+    <ClInclude Include="RadixSort.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RandomGen.h" />
   </ItemGroup>

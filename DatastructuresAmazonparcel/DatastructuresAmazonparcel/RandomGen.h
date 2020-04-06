@@ -6,8 +6,6 @@
 #include <random>
 using namespace std;
 // assuming postcode is the AANN NAA format for example DN55 1PT
-
-// gen number between 1-26
 class RandNum
 {
 public:
