@@ -2,6 +2,7 @@
 #include "RandomGen.h"
 #include <iostream>
 #include <string> 
+
 const int MAXSIZE = 15; //! Max size for Vector 
 
 vector<string> postCode; // vector dynamicly allocates array size
@@ -19,6 +20,7 @@ public:
 			for (auto & c : postChar) c = toupper(c);// turn postChar to upper loop trough post char and post it to upper return to postChar
 			postCode.push_back(postChar + postLetter);
 		}
+		
 		for (int i = 0; i<MAXSIZE;i++)
 		{
 			/*cout << "before sorting" << endl;
