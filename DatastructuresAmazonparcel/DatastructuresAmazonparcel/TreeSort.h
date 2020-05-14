@@ -27,6 +27,7 @@ public:
 			string firstChar = i->substr(0, 1);
 			std::cout << "Identified First Char" << firstChar << endl;
 
+			//! OLD WAY OF DOING IT
 			//vector<string>::iterator it;
 			//it = find(fakeTreeSort.begin(), fakeTreeSort.end(), firstChar);
 			//if (it != fakeTreeSort.end())
@@ -39,6 +40,8 @@ public:
 			//	//element not found so new element and reached end of vector
 			//	std::cout << "End of vector";
 			//}
+			//
+			//! NEW Way Of Doing IT
 			bool isPresent = (find(cbegin(fakeTreeSort), cend(fakeTreeSort), firstChar) != cend(fakeTreeSort));
 			if (isPresent == true)
 			{
