@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string> 
 
-const int MAXSIZE = 15; //! Max size for Vector 
+const int MAXSIZE = 30000; //! Max size for Vector 
 
 vector<string> postCode; // vector dynamicly allocates array size
 class AmazonBox

@@ -5,7 +5,11 @@
 #include <vector>
 #include <map>
 #include <algorithm>
+#include <unordered_map>
 #include "SortParcel.h"
+#include "Program.h"
+#include "stringhelper.h"
+
 using namespace std;
 
 class TreeSort
@@ -13,60 +17,53 @@ class TreeSort
 public:
 	BoxSort bs;
 	vector<string> x = bs.sortBox();
-	//vector<string,vector<string> > fakeTreeSort;//TODO Is this the issue?
-	vector<vector<string> > fakeTreeSort;
-		
-	vector<int>::iterator it;
 
 	void test()
 	{
+		auto fakeTreeSort = std::unordered_map<string, vector<string>>();
+		vector<string>::iterator it;
 		for (auto i = x.begin(); i != x.end(); i++)
 		{
-			//std::cout << *i << endl;
-
 			string firstChar = i->substr(0, 1);
 			std::cout << "Identified First Char" << firstChar << endl;
 
-			//! OLD WAY OF DOING IT
-			//vector<string>::iterator it;
-			//it = find(fakeTreeSort.begin(), fakeTreeSort.end(), firstChar);
-			//if (it != fakeTreeSort.end())
-			//{
-			//	// element found so add to faketreesort
-			//	it = fakeTreeSort.insert(it, firstChar);
-			//}
-			//else
-			//{
-			//	//element not found so new element and reached end of vector
-			//	std::cout << "End of vector";
-			//}
-			//
-			//! NEW Way Of Doing IT
-			bool isPresent = (find(cbegin(fakeTreeSort), cend(fakeTreeSort), firstChar) != cend(fakeTreeSort));
-			if (isPresent == true)
+			for (auto entry : x)
 			{
-				//isPresent = fakeTreeSort.insert(isPresent, firstChar);
-				fakeTreeSort.insert(fakeTreeSort.begin() + isPresent , firstChar);
-			}else
-			{
-				// no element found and reached end of vector
-				std::cout << "End Of Vector Reached";
+				cout << "Entry : ";
+				auto firstChar = entry.substr(0, 1); // find first char of each entry
+				cout << firstChar << endl;
+
+				if (fakeTreeSort.find(firstChar) == fakeTreeSort.end())
+				{
+					// new so create entry
+					fakeTreeSort.emplace(firstChar, vector<string> {entry});
+
+					cout << "New Character Found " << firstChar << ". Inserting into fakeTreeSort" << std::endl;
+
+				}
+				else
+				{
+					// add to existing
+					fakeTreeSort[firstChar].push_back(entry);
+
+					cout << "Character Found. Adding to List" << std::endl;
+				}
 			}
 		}
-
 		// print out
-		std::cout << "-------------------------------------------";
-		/*for (string firstChar : fakeTreeSort)
-		{
-			vector<string> enteries = fakeTreeSort[firstChar];
-			std::cout << "Character Key: " << firstChar;
-			for (auto first_char : enteries)(std::cout << "--------->" << first_char << endl);
-		}*/
-		
-		for (auto i = x.begin(); i != x.end();i++)
-		{
-			fakeTreeSort.pop_back();
-		}
+		std::cout << "-------------------------------------------" << endl;
 
+		for (auto key : fakeTreeSort)
+		{
+			auto entries = fakeTreeSort[key.first];
+
+			std::cout << key.first << std::endl;
+
+			std::for_each(entries.begin(), entries.end(), [&](std::any x)
+			{
+				std::cout << StringHelper::formatSimple(L"----->", x) << std::endl;
+			});
+		}
 	}
 };
+  

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\TreeSort">
+      <UniqueIdentifier>{e408ea6d-b7b9-4da1-a9ac-92eba166523c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -30,8 +33,17 @@
     <ClInclude Include="SortParcel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="stringhelper.h">
+      <Filter>Header Files\TreeSort</Filter>
+    </ClInclude>
     <ClInclude Include="TreeSort.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\TreeSort</Filter>
+    </ClInclude>
+    <ClInclude Include="Program.h">
+      <Filter>Header Files\TreeSort</Filter>
+    </ClInclude>
+    <ClInclude Include="Bin.h">
+      <Filter>Header Files\TreeSort</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

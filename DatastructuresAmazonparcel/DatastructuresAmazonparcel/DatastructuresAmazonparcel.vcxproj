@@ -151,11 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Bin.h" />
     <ClInclude Include="CreateParcel.h" />
+    <ClInclude Include="Program.h" />
     <ClInclude Include="RadixSort.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="RandomGen.h" />
     <ClInclude Include="SortParcel.h" />
+    <ClInclude Include="stringhelper.h" />
     <ClInclude Include="TreeSort.h" />
   </ItemGroup>
   <ItemGroup>
