@@ -133,7 +133,7 @@ public:
 
 					std::wstring index = trim(input.substr(openBrace + 1, closeBrace - openBrace - 1));
 					if (index == L"0")
-						ss << NULL;
+						ss << arg0;
 					else
 						throw std::runtime_error("Only simple positional format specifiers are handled by the 'formatSimple' helper method.");
 				}

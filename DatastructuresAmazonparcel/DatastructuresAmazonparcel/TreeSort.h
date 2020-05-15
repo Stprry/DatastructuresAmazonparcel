@@ -5,10 +5,11 @@
 #include <vector>
 #include <map>
 #include <algorithm>
-#include <unordered_map>
+#include <map>
 #include "SortParcel.h"
 #include "Program.h"
 #include "stringhelper.h"
+#include <any>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ public:
 
 	void test()
 	{
-		auto fakeTreeSort = std::unordered_map<string, vector<string>>();
+		auto fakeTreeSort = std::map<string, vector<string>>();
 		vector<string>::iterator it;
 		for (auto i = x.begin(); i != x.end(); i++)
 		{
@@ -59,9 +60,9 @@ public:
 
 			std::cout << key.first << std::endl;
 
-			std::for_each(entries.begin(), entries.end(), [&](std::any x)
+			std::for_each(entries.begin(), entries.end(), [&](std::string y)
 			{
-				std::cout << StringHelper::formatSimple(L"----->", x) << std::endl;
+				std::cout << y << std::endl;
 			});
 		}
 	}
