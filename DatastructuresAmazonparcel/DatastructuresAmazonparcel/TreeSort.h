@@ -29,7 +29,6 @@ public:
 			//std::cout << "Identified First Char" << firstChar << endl;
 			for (auto entry : x)
 			{
-			
 				//cout << "Entry : ";
 				auto firstChar = entry.substr(0, 1); // find first char of each entry
 				//cout << firstChar << endl;
@@ -54,12 +53,44 @@ public:
 		for (auto key : fakeTreeSort)
 		{
 			auto entries = fakeTreeSort[key.first];
-
+			
 			std::cout <<"========================= Sorted Post Codes For Parcel deliveries, Postcode Section "<< key.first << " =========================" << std::endl;
+			string unique = "";
+			// create vector
+			vector<string> uniqueVectSection;
+			std::vector<string>::iterator it;
 			for_each(entries.begin(), entries.end(), [&](string y)
 			{
-				std::cout << y << std::endl;
-				
+
+				// if entry is unique (find)
+					//add unique entry to vect
+					// display unique vector
+
+				//else if entry has different  first char
+					//overwrite vector
+					// add new entry to start vector
+
+					
+				it = find(uniqueVectSection.begin(), uniqueVectSection.end(), y);
+
+				if (it == uniqueVectSection.end())
+				{
+					uniqueVectSection.push_back(y);
+					unique = y;
+					cout << y << endl;
+				}
+				else if(y[0] != unique[0]){
+					uniqueVectSection.clear();
+					uniqueVectSection.push_back(y);
+					cout << y << endl;
+				}
+
+				/*if (unique != y)
+				{
+					std::cout << y << std::endl;
+					unique = y;
+				}*/
+
 			});
 		}
 	}
