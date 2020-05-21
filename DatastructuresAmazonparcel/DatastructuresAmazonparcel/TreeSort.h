@@ -51,12 +51,11 @@ public:
 		}
 		// print out
 		std::cout << "-------------------------------------------" << endl;
-
 		for (auto key : fakeTreeSort)
 		{
 			auto entries = fakeTreeSort[key.first];
 
-			std::cout << key.first << std::endl;
+			std::cout <<"========================= Sorted Post Codes For Parcel deliveries, Postcode Section "<< key.first << " =========================" << std::endl;
 			for_each(entries.begin(), entries.end(), [&](string y)
 			{
 				std::cout << y << std::endl;

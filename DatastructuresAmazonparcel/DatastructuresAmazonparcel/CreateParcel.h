@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string> 
 
-const int MAXSIZE = 100; //! Max size for Vector 
+const int MAXSIZE = 10; //! Max size for Vector 
 
 vector<string> postCode; // vector dynamicly allocates array size
 class AmazonBox
@@ -13,6 +13,7 @@ public:
 	{
 		RandNum R;
 		R.seed();//! seed ONCE otherwise no random numbers 
+		
 		for (int i = 0; i < MAXSIZE; i++)
 		{
 			string postChar = { R.letterGen() };
